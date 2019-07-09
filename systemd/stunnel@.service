@@ -1,0 +1,12 @@
+[Unit]
+Description=Stunnel Service running based on /etc/stunnel/conf.d/%i.conf
+After=syslog.target network.target auditd.service
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/stunnel /etc/stunnel/conf.d/%i.conf
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
+

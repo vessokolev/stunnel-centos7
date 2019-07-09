@@ -1,0 +1,11 @@
+
+module stunnel2log 1.0;
+
+require {
+        type stunnel_t;
+        type stunnel_log_t;
+        class dir { add_name search write };
+}
+
+#============= stunnel_t ==============
+allow stunnel_t stunnel_log_t:dir { add_name search write };
